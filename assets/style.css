@@ -267,6 +267,11 @@ img {
   color: var(--on-accent);
 }
 
+.action.primary .action-icon,
+.button-link.primary .action-icon {
+  filter: invert(1);
+}
+
 .action.secondary,
 .button-link.secondary {
   background: var(--control-bg);
@@ -298,8 +303,9 @@ img {
 }
 
 .language-toggle {
-  min-width: 46px;
-  padding: 0 10px;
+  min-width: 40px;
+  max-width: 40px;
+  padding: 0;
 }
 
 .theme-toggle {
