@@ -1,5 +1,4 @@
 (function () {
-  const YOUTUBE_URL = "TODO_YOUTUBE_URL";
   const THEME_STORAGE_KEY = "iist-computex-theme";
   const LANGUAGE_STORAGE_KEY = "iist-computex-language";
   const root = document.documentElement;
@@ -56,6 +55,26 @@
     "Practical path toward PQC migration": "邁向 PQC 遷移的實務路徑",
     "Video introduction": "影片介紹",
     "A short product and platform video can be linked here when the final YouTube URL is ready.": "最終 YouTube 連結準備好後，可在此放置產品與平台短片。",
+    "Watch the IIST product and platform video during or after your booth visit.": "在參觀展位期間或之後觀看 IIST 產品與平台影片。",
+    "IIST video introduction": "IIST 影片介紹",
+    "A concise introduction to IIST, Dynamic PUF, and hardware-rooted trust for COMPUTEX visitors.": "為 COMPUTEX 參觀者準備的 IIST、Dynamic PUF 與硬體信任根簡介。",
+    "Where to find us": "如何找到我們",
+    "Find IIST at COMPUTEX 2026": "在 COMPUTEX 2026 找到 IIST",
+    "First go to TaiNEX 2, 4F, Section S. Then use the detailed Section S map below for the two marked IIST locations.": "請先前往南港展覽館二館 4F 的 S 區，再使用下方 S 區詳細地圖找到兩個以綠色標示的 IIST 位置。",
+    "Section S": "S 區",
+    "Two marked locations": "兩個標示位置",
+    "Booth map": "展位地圖",
+    "Use the first map to reach the correct hall. Use the second map once you are on TaiNEX 2, 4F.": "先使用第一張地圖前往正確展館；到達南港展覽館二館 4F 後，再使用第二張地圖。",
+    "Step 1": "步驟 1",
+    "Get to the right hall": "前往正確展館",
+    "TaiNEX 2, 4F, Section S.": "南港展覽館二館 4F，S 區。",
+    "Open hall map": "開啟展館地圖",
+    "Step 2": "步驟 2",
+    "Find the marked locations": "找到標示位置",
+    "Two IIST points are marked in green on the Section S floor map.": "S 區平面圖上以綠色標示兩個 IIST 位置。",
+    "Open floor map": "開啟樓層地圖",
+    "Need help finding us?": "需要協助找到我們嗎？",
+    "Contact service@iist.com.tw and tell us you are at COMPUTEX 2026, TaiNEX 2, 4F.": "請聯絡 service@iist.com.tw，並告訴我們你在 COMPUTEX 2026 南港展覽館二館 4F。",
     "Need the right IIST contact?": "需要找到合適的 IIST 聯絡窗口嗎？",
     "Send your profile, company, and target use case. We will route the discussion to the right technical or commercial owner.": "請提供你的角色、公司與目標應用，我們會協助轉給合適的技術或商務窗口。",
     "For connected product teams": "適合連網產品團隊",
@@ -164,6 +183,10 @@
       button.setAttribute("data-theme-current", theme);
       button.setAttribute("aria-label", "Switch to " + nextTheme + " mode");
       button.setAttribute("title", "Switch to " + nextTheme + " mode");
+      const icon = button.querySelector("[data-theme-icon]");
+      if (icon) {
+        icon.src = icon.src.replace(/icon-(moon|sun)\.svg$/, "icon-" + (theme === "dark" ? "sun" : "moon") + ".svg");
+      }
     });
   }
 
@@ -312,25 +335,49 @@
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "theme-toggle";
+    button.className = "control-toggle theme-toggle";
     button.setAttribute("data-theme-toggle", "");
-    button.innerHTML = '<span class="theme-icon" aria-hidden="true"></span><span class="visually-hidden">Toggle light or dark mode</span>';
+    button.innerHTML = '<img class="control-icon" src="assets/icon-moon.svg" alt="" width="20" height="20" data-theme-icon><span class="visually-hidden">Toggle light or dark mode</span>';
     actions.appendChild(button);
     updateThemeButtons(activeTheme());
+  }
+
+  function handleLanguageToggle(event) {
+    event.preventDefault();
+    applyLanguage(activeLanguage() === "zh-Hant" ? "en" : "zh-Hant", true);
+  }
+
+  function handleThemeToggle(event) {
+    event.preventDefault();
+    applyTheme(activeTheme() === "dark" ? "light" : "dark", true);
+  }
+
+  function bindControlButtons() {
+    document.querySelectorAll("[data-language-toggle]").forEach(function (button) {
+      if (button.dataset.boundControl === "true") {
+        return;
+      }
+      button.dataset.boundControl = "true";
+      button.addEventListener("click", handleLanguageToggle);
+    });
+
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
+      if (button.dataset.boundControl === "true") {
+        return;
+      }
+      button.dataset.boundControl = "true";
+      button.addEventListener("click", handleThemeToggle);
+    });
   }
 
   document.addEventListener("click", function (event) {
     const languageButton = event.target.closest("[data-language-toggle]");
     if (languageButton) {
-      event.preventDefault();
-      applyLanguage(activeLanguage() === "zh-Hant" ? "en" : "zh-Hant", true);
       return;
     }
 
     const themeButton = event.target.closest("[data-theme-toggle]");
     if (themeButton) {
-      event.preventDefault();
-      applyTheme(activeTheme() === "dark" ? "light" : "dark", true);
       return;
     }
 
@@ -350,26 +397,13 @@
       return;
     }
 
-    const videoLink = event.target.closest("[data-video-placeholder]");
-    if (videoLink && (!YOUTUBE_URL || YOUTUBE_URL === "TODO_YOUTUBE_URL")) {
-      event.preventDefault();
-      const status = document.getElementById("video-status");
-      if (status) {
-        status.textContent = "Video link placeholder: replace TODO_YOUTUBE_URL in assets/site.js.";
-      }
-    }
   });
 
   document.addEventListener("DOMContentLoaded", function () {
     addThemeToggle();
+    bindControlButtons();
+    updateThemeButtons(activeTheme());
     applyLanguage(storedLanguage() || "en", false);
-
-    if (YOUTUBE_URL && YOUTUBE_URL !== "TODO_YOUTUBE_URL") {
-      document.querySelectorAll("[data-video-placeholder]").forEach(function (link) {
-        link.href = YOUTUBE_URL;
-        link.removeAttribute("data-video-placeholder");
-      });
-    }
   });
 
   if (systemTheme && systemTheme.addEventListener) {
