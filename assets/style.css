@@ -207,15 +207,17 @@ img {
 .event-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
   flex: 0 0 auto;
   border: 1px solid var(--border);
   background: var(--event-bg);
   color: var(--muted);
   border-radius: 999px;
-  padding: 7px 10px;
+  padding: 7px 12px 7px 10px;
   font-size: 12px;
   font-weight: 720;
+  line-height: 1;
 }
 
 .event-pill:hover,
@@ -323,9 +325,12 @@ img {
 }
 
 .action-icon {
+  display: block;
   width: 18px;
   height: 18px;
   flex: 0 0 auto;
+  object-fit: contain;
+  filter: var(--control-icon-filter);
 }
 
 .pdf-mark {
