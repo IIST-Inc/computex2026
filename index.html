@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <div class="top-controls" aria-label="Display controls">
+    <button class="control-toggle language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="globe-icon" aria-hidden="true"></span><span class="language-code" data-no-i18n>繁</span></button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle light or dark mode"><span class="theme-icon" aria-hidden="true"></span></button>
+  </div>
   <div class="page-shell">
     <header class="site-header">
       <div class="brand-row">
@@ -20,7 +24,7 @@
       <nav class="page-actions" aria-label="Page actions">
         <button class="action primary" type="button" data-print-page>
           <span class="pdf-mark" aria-hidden="true">PDF</span>
-          Export
+          Export page
         </button>
         <button class="action secondary" type="button" data-share-page aria-describedby="share-status">
           <img class="action-icon" src="assets/icon-share.svg" alt="" width="18" height="18">
@@ -32,6 +36,9 @@
         </a>
         <a class="button-link secondary" href="mailto:service@iist.com.tw?subject=COMPUTEX%202026%20IIST%20Inquiry">Email</a>
       </nav>
+      <button class="theme-toggle header-theme-toggle" type="button" data-theme-toggle aria-label="Toggle light or dark mode">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
     </header>
 
     <main>
@@ -41,10 +48,10 @@
           <h1>Select your profile</h1>
           <p class="lede">IIST brings Dynamic PUF technology into security keys, secure modules, silicon/IP, and trust workflows. Pick a profile and share the page with the colleague who owns the next step.</p>
           <div class="chip-row" aria-label="Core themes">
-            <span class="chip">FIDO2 and passkeys</span>
-            <span class="chip">Device identity</span>
-            <span class="chip">C2PA-oriented signing</span>
-            <span class="chip">PQC-ready direction</span>
+            <a class="chip" href="https://fidoalliance.org/passkeys/" target="_blank" rel="noopener noreferrer">FIDO2 and passkeys</a>
+            <a class="chip" href="https://www.nist.gov/publications/zero-trust-architecture" target="_blank" rel="noopener noreferrer">Zero-Trust Architecture</a>
+            <a class="chip" href="https://contentcredentials.org/" target="_blank" rel="noopener noreferrer">C2PA-oriented</a>
+            <a class="chip" href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" target="_blank" rel="noopener noreferrer">PQC-ready migration</a>
           </div>
         </div>
       </section>
@@ -81,7 +88,7 @@
               <img src="assets/icon-growth.svg" alt="" width="48" height="48">
               <div>
                 <h3>Investors / CVC</h3>
-                <p>Review the platform story, product forms, validation, and market leverage.</p>
+                <p>Review the platform story, product forms, proof points, and market leverage.</p>
                 <span class="card-kicker">Products, roadmap, traction</span>
               </div>
             </a>
@@ -148,6 +155,9 @@
           <button class="action secondary" type="button" data-share-page aria-describedby="share-status">Share this site</button>
         </div>
       </section>
+      <div class="bottom-controls">
+        <button class="control-toggle language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="globe-icon" aria-hidden="true"></span><span class="language-code" data-no-i18n>繁</span></button>
+      </div>
     </main>
 
     <footer class="site-footer">

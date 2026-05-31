@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body style="--accent: #f59e0b; --accent-rgb: 245, 158, 11">
+  <div class="top-controls" aria-label="Display controls">
+    <button class="control-toggle language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="globe-icon" aria-hidden="true"></span><span class="language-code" data-no-i18n>繁</span></button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle light or dark mode"><span class="theme-icon" aria-hidden="true"></span></button>
+  </div>
   <div class="page-shell">
     <header class="site-header">
       <div class="brand-row">
@@ -18,15 +22,16 @@
         <span class="event-pill">COMPUTEX 2026</span>
       </div>
       <nav class="page-actions" aria-label="Page actions">
-        <button class="action primary" type="button" data-print-page><span class="pdf-mark" aria-hidden="true">PDF</span>Export</button>
+        <button class="action primary" type="button" data-print-page><span class="pdf-mark" aria-hidden="true">PDF</span>Export page</button>
         <button class="action secondary" type="button" data-share-page aria-describedby="share-status"><img class="action-icon" src="../assets/icon-share.svg" alt="" width="18" height="18">Share</button>
         <a class="button-link secondary" href="https://www.iist-site.com">Website<img class="action-icon" src="../assets/icon-external.svg" alt="" width="18" height="18"></a>
         <a class="button-link secondary" href="mailto:service@iist.com.tw?subject=COMPUTEX%202026%20IIST%20Inquiry%20-%20Semiconductor%20%26%20IP">Email</a>
       </nav>
+      <button class="theme-toggle header-theme-toggle" type="button" data-theme-toggle aria-label="Toggle light or dark mode"><span class="theme-icon" aria-hidden="true"></span></button>
     </header>
 
     <main>
-      <a class="back-link" href="../index.html">Back to profile selection</a>
+      <a class="back-link" href="../index.html">&larr; Back to profile section</a>
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">For silicon and secure platform teams</p>
@@ -36,7 +41,7 @@
             <span class="chip">Dynamic PUF</span>
             <span class="chip">Root of trust</span>
             <span class="chip">TRNG</span>
-            <span class="chip">PQC-ready direction</span>
+            <a class="chip" href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" target="_blank" rel="noopener noreferrer">PQC-ready migration</a>
           </div>
         </div>
         <figure class="hero-visual">
@@ -84,7 +89,7 @@
           <div class="asset-grid">
             <article class="asset-card"><img src="../assets/visual-sase-architecture.svg" alt="SASe architecture"><h3>SASe architecture</h3><p>High-level view of trust domains, host interface, and secure applications.</p></article>
             <article class="asset-card"><img src="../assets/visual-sasp-roadmap.svg" alt="SASp roadmap"><h3>SASp roadmap</h3><p>A platform direction for MCU, root-of-trust, and crypto-agile planning.</p></article>
-            <article class="asset-card"><img src="../assets/visual-certifications.svg" alt="Validation foundation"><h3>Validation foundation</h3><p>Signals that support silicon, architecture, and co-development review.</p></article>
+            <article class="asset-card"><img src="../assets/visual-certifications.svg" alt="IP evaluation proof"><h3>IP evaluation proof</h3><p>Evidence to support silicon architecture review, partner screening, and co-development talks.</p></article>
           </div>
         </div>
       </section>
@@ -99,6 +104,10 @@
           <button class="action secondary" type="button" data-share-page aria-describedby="share-status">Share with colleague</button>
         </div>
       </section>
+      <a class="back-link bottom-back" href="../index.html">&larr; Back to profile section</a>
+      <div class="bottom-controls">
+        <button class="control-toggle language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="globe-icon" aria-hidden="true"></span><span class="language-code" data-no-i18n>繁</span></button>
+      </div>
     </main>
 
     <footer class="site-footer">
