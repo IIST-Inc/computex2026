@@ -207,6 +207,7 @@ img {
 .event-pill {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   flex: 0 0 auto;
   border: 1px solid var(--border);
   background: var(--event-bg);
@@ -221,6 +222,11 @@ img {
 .event-pill:focus-visible {
   border-color: rgba(var(--accent-rgb), 0.45);
   color: var(--text);
+}
+
+.event-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .page-actions {
@@ -391,6 +397,14 @@ h3 {
   font-size: 18px;
   line-height: 1.2;
   letter-spacing: 0;
+}
+
+.title-emoji {
+  display: inline-block;
+  margin-right: 6px;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  line-height: 1;
+  vertical-align: -0.05em;
 }
 
 .lede {
@@ -665,8 +679,14 @@ h3 {
 }
 
 .bottom-controls .language-toggle {
+  min-width: 42px;
+  max-width: 42px;
   min-height: 42px;
-  padding: 0 14px;
+  padding: 0;
+}
+
+.bottom-controls .language-code {
+  display: none;
 }
 
 .split-band {

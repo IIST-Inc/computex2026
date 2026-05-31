@@ -3,6 +3,7 @@
   const LANGUAGE_STORAGE_KEY = "iist-computex-language";
   const root = document.documentElement;
   const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  const SHOW_TEXT_NODE = window.NodeFilter && typeof window.NodeFilter.SHOW_TEXT === "number" ? window.NodeFilter.SHOW_TEXT : 4;
   const originalTextNodes = new WeakMap();
 
   const ZH_HANT = {
@@ -42,7 +43,7 @@
     "Products, roadmap, traction": "產品、路線圖、進展",
     "Demo kits, channel package": "展示套件、通路方案",
     "Ankhor Key, passkeys": "Ankhor Key、Passkeys",
-    "Center Stage talk": "Center Stage 演講",
+    "Event Talk": "活動演講",
     "June 4, 2026 at 14:30": "2026 年 6 月 4 日 14:30",
     "Center Stage, TaiNEX 2 4F. Meet IIST for a concise introduction to hardware-rooted trust and Dynamic PUF applications.": "地點：南港展覽館二館 4F Center Stage。歡迎聽 IIST 快速介紹硬體信任根與 Dynamic PUF 應用。",
     "Secure identity": "安全身分",
@@ -241,22 +242,45 @@
     return leading + translated + trailing;
   }
 
+  function translateTextNode(node, language) {
+    if (hasNoTranslateAncestor(node)) {
+      return;
+    }
+    if (!originalTextNodes.has(node)) {
+      originalTextNodes.set(node, node.nodeValue);
+    }
+    node.nodeValue = translateTextValue(originalTextNodes.get(node), language);
+  }
+
+  function translateVisibleTextContainers(language) {
+    const selector = "h1,h2,h3,p,li,span,strong,a,button";
+    document.querySelectorAll(selector).forEach(function (element) {
+      if (element.closest("[data-no-i18n],script,style,noscript")) {
+        return;
+      }
+      Array.prototype.forEach.call(element.childNodes, function (node) {
+        if (node.nodeType === 3) {
+          translateTextNode(node, language);
+        }
+      });
+    });
+  }
+
   function translatePage(language) {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    if (!document.body) {
+      return;
+    }
+
+    const walker = document.createTreeWalker(document.body, SHOW_TEXT_NODE, null);
     const nodes = [];
     while (walker.nextNode()) {
       nodes.push(walker.currentNode);
     }
 
     nodes.forEach(function (node) {
-      if (hasNoTranslateAncestor(node)) {
-        return;
-      }
-      if (!originalTextNodes.has(node)) {
-        originalTextNodes.set(node, node.nodeValue);
-      }
-      node.nodeValue = translateTextValue(originalTextNodes.get(node), language);
+      translateTextNode(node, language);
     });
+    translateVisibleTextContainers(language);
   }
 
   function updateLanguageButtons(language) {
