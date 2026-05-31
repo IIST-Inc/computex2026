@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="icon-chip.svg">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd166"/><stop offset="1" stop-color="#35a7ff"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".35"/></filter></defs>
+  <rect width="180" height="180" rx="46" fill="#0d1b2d"/><circle cx="138" cy="32" r="62" fill="#ffd166" opacity=".15"/>
+  <g filter="url(#s)" stroke="url(#g)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="50" y="50" width="80" height="80" rx="16"/><path d="M72 28v22M90 28v22M108 28v22M72 130v22M90 130v22M108 130v22M28 72h22M28 90h22M28 108h22M130 72h22M130 90h22M130 108h22"/></g>
+</svg>

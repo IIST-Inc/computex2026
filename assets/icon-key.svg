@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="icon-key.svg">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb86b"/><stop offset="1" stop-color="#35a7ff"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".35"/></filter></defs>
+  <rect width="180" height="180" rx="46" fill="#0d1b2d"/><circle cx="138" cy="32" r="62" fill="#ffb86b" opacity=".15"/>
+  <g filter="url(#s)" stroke="url(#g)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="72" cy="74" r="28"/><path d="M92 94l54 54M118 122l18-18M130 134l18-18"/><circle cx="72" cy="74" r="8"/></g>
+</svg>

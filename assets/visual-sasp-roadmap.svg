@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="visual-sasp-roadmap.svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2b47"/>
+      <stop offset="0.55" stop-color="#0b1d33"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#53f4d4"/>
+      <stop offset="1" stop-color="#35a7ff"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#ff8f70"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b794ff"/>
+      <stop offset="1" stop-color="#73e2a7"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+    <style>
+      .bg{fill:url(#bg)} .panel{fill:rgba(255,255,255,.07);stroke:rgba(255,255,255,.22);stroke-width:2}
+      .muted{fill:#9fb3ca} .text{fill:#f5f8ff;font-family:Inter,Arial,sans-serif;font-weight:800}
+      .small{font-size:24px;font-weight:700} .label{font-size:22px;font-weight:800} .title{font-size:38px;font-weight:900}
+      .line{stroke:#53f4d4;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .dark{fill:#07111f!important} .thin{stroke:rgba(255,255,255,.28);stroke-width:2;fill:none} .chip{fill:url(#a)} .warm{fill:url(#b)} .violet{fill:url(#c)}
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540" rx="42"/>
+  <circle cx="850" cy="90" r="180" fill="#35a7ff" opacity="0.12"/>
+  <circle cx="120" cy="465" r="220" fill="#53f4d4" opacity="0.10"/>
+  
+  <rect x="92" y="74" width="784" height="388" rx="34" class="panel" filter="url(#shadow)"/>
+  <text x="128" y="140" class="text title">SASp secure platform roadmap</text>
+  <g transform="translate(110 215)">
+    <rect x="0" y="0" width="140" height="120" rx="26" fill="url(#a)"/><text x="25" y="57" class="text label dark">Secure</text><text x="42" y="88" class="text small dark">MCU</text>
+    <path d="M155 60h45" class="line"/>
+    <rect x="215" y="0" width="140" height="120" rx="26" class="panel"/><text x="258" y="57" class="text label">RoT</text><text x="252" y="88" class="text small">domains</text>
+    <path d="M370 60h45" class="line"/>
+    <rect x="430" y="0" width="140" height="120" rx="26" class="panel"/><text x="463" y="57" class="text label">PQC</text><text x="460" y="88" class="text small">ready</text>
+    <path d="M585 60h45" class="line"/>
+    <rect x="645" y="0" width="140" height="120" rx="26" fill="url(#b)"/><text x="693" y="57" class="text label dark">IP</text><text x="683" y="88" class="text small dark">option</text>
+  </g>
+
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="visual-use-cases.svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2b47"/>
+      <stop offset="0.55" stop-color="#0b1d33"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#53f4d4"/>
+      <stop offset="1" stop-color="#35a7ff"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#ff8f70"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b794ff"/>
+      <stop offset="1" stop-color="#73e2a7"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+    <style>
+      .bg{fill:url(#bg)} .panel{fill:rgba(255,255,255,.07);stroke:rgba(255,255,255,.22);stroke-width:2}
+      .muted{fill:#9fb3ca} .text{fill:#f5f8ff;font-family:Inter,Arial,sans-serif;font-weight:800}
+      .small{font-size:24px;font-weight:700} .label{font-size:22px;font-weight:800} .title{font-size:38px;font-weight:900}
+      .line{stroke:#53f4d4;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .dark{fill:#07111f!important} .thin{stroke:rgba(255,255,255,.28);stroke-width:2;fill:none} .chip{fill:url(#a)} .warm{fill:url(#b)} .violet{fill:url(#c)}
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540" rx="42"/>
+  <circle cx="850" cy="90" r="180" fill="#35a7ff" opacity="0.12"/>
+  <circle cx="120" cy="465" r="220" fill="#53f4d4" opacity="0.10"/>
+  
+  <rect x="88" y="70" width="784" height="400" rx="34" class="panel" filter="url(#shadow)"/>
+  <text x="125" y="135" class="text title">Applications enabled</text>
+  <g transform="translate(140 195)">
+    <rect width="270" height="86" rx="24" class="panel"/><circle cx="42" cy="43" r="22" fill="url(#a)"/><text x="82" y="52" class="text label">Authentication</text>
+    <rect x="350" width="270" height="86" rx="24" class="panel"/><circle cx="392" cy="43" r="22" fill="url(#b)"/><text x="432" y="52" class="text label">Device trust</text>
+    <rect y="130" width="270" height="86" rx="24" class="panel"/><circle cx="42" cy="173" r="22" fill="url(#c)"/><text x="82" y="182" class="text label">Authenticity</text>
+    <rect x="350" y="130" width="270" height="86" rx="24" class="panel"/><circle cx="392" cy="173" r="22" fill="url(#a)"/><text x="432" y="182" class="text label">PQC migration</text>
+  </g>
+
+</svg>
