@@ -430,7 +430,7 @@ h3 {
 
 .hero-visual {
   margin: 0;
-  min-height: 208px;
+  min-height: 250px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
@@ -441,11 +441,11 @@ h3 {
 }
 
 .hero-visual img {
-  width: min(260px, 76%);
+  width: min(312px, 86%);
 }
 
 .hero-visual.wide img {
-  width: min(430px, 94%);
+  width: min(516px, 96%);
 }
 
 .chip-row {
@@ -509,6 +509,11 @@ h3 {
 
 .section-inner {
   padding: 22px 18px;
+}
+
+.visual-stack {
+  display: grid;
+  gap: 18px;
 }
 
 .section-head {
@@ -739,7 +744,7 @@ h3 {
 
 .asset-card img {
   width: 100%;
-  height: 140px;
+  height: 168px;
   object-fit: contain;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
