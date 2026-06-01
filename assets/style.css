@@ -516,6 +516,14 @@ h3 {
   gap: 18px;
 }
 
+.visual-stack .hero-visual {
+  min-height: 375px;
+}
+
+.visual-stack .hero-visual.wide img {
+  width: min(774px, 100%);
+}
+
 .section-head {
   display: grid;
   gap: 10px;
